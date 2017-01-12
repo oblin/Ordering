@@ -1,22 +1,24 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Ordering.Models
 {
     public class Client
     {
-        [Required]
+        // [Required]
         public string FirstName { get; set; }
-        [Required]
+        // [Required]
         public string LastName { get; set; }
-        [Required]
+        // [Required]
         public string CompanyName { get; set; }
-        [Required, EmailAddress]
+        // [Required, EmailAddress]
+        [Remote("VerifyEmail", "Client")]
         public string Email { get; set; }
-        [Required]
+        // [Required]
         public string Phone { get; set; }
         public DateTime? ContactDate { get; set; }
-        [Required]
+        // [Required]
         public string ClientType { get; set; }
         [MaxLengthAttribute(25)]
         public string Notes { get; set; }
