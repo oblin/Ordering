@@ -41,5 +41,11 @@ namespace Ordering.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Vote(int id)
+        {
+            return ViewComponent("SurveyWidget", new { productId = id });
+        }
     }
 }

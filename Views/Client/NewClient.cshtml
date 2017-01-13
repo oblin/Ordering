@@ -53,6 +53,10 @@
                     @Html.DropDownListFor(x => x.ClientType, clientTypes, new { @class = "form-control" })
                 </div>
             </div>
+
+            <div class="col-md-4">
+                @await Component.InvokeAsync("InventoryWidget", new { threshold = 20})
+            </div>
         </div>
 
         <div class="row">
