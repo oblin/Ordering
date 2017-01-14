@@ -30,6 +30,8 @@ namespace Ordering
         {
             // Add framework services.
             services.AddScoped<IInventoryService, InventoryService>();
+            services.AddSingleton<ISurveyService, SurveyService>();
+            services.AddSingleton<IFormDataService, FormDataService>();
             services.AddMvc();
         }
 

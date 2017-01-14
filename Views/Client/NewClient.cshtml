@@ -1,4 +1,5 @@
 @model Ordering.Models.Client
+@inject Ordering.Services.IFormDataService FormDataHelper
 
 <div id="page-wrapper">
     <div class="row">
@@ -42,15 +43,11 @@
                 </div>
                 <div class="form-group">
                     <label>Client Type</label>
-                    @{
-                        var clientTypes = new List<SelectListItem>()
-                            {
-                                new SelectListItem { Text = "Small Business" },
-                                new SelectListItem { Text = "Individual" },
-                                new SelectListItem { Text = "Corporation" }
-                            };
-                    }
-                    @Html.DropDownListFor(x => x.ClientType, clientTypes, new { @class = "form-control" })
+                    @Html.DropDownListFor(x => x.ClientType, FormDataHelper.GetClientTypes(), new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.NearestLocation, "Nearest Location")
+                    @Html.DropDownListFor(x => x.NearestLocation, FormDataHelper.GetLocations(), new { @class = "form-control" })
                 </div>
             </div>
             <div class="col-md-4">
