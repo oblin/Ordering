@@ -1,0 +1,8 @@
+{
+    "Locations": [
+        "Downtown", "Northeast", "West", "South", "East", "Country"
+    ],
+    "ClientTypes": [
+        "Small Business", "Corporation", "Indivisual"
+    ]
+}

@@ -26,7 +26,9 @@
     "Microsoft.EntityFrameworkCore.Design": {
       "version": "1.1.0",
       "type": "build"
-    }    
+    },
+    "Autofac": "4.2.1",
+    "Autofac.Extensions.DependencyInjection": "4.0.0"
   },
 
   "tools": {
