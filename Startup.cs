@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Ordering.Services;
 
 namespace Ordering
 {
@@ -28,6 +29,7 @@ namespace Ordering
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
+            services.AddScoped<IInventoryService, InventoryService>();
             services.AddMvc();
         }
 
