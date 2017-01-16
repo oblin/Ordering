@@ -5,6 +5,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
 using Ordering.Components;
+using Ordering.Models;
 
 namespace Ordering.Services
 {
@@ -31,6 +32,11 @@ namespace Ordering.Services
             return _srcJson.Locations.Select(x => new SelectListItem()
                 { Text = x}
             ).ToList();
+        }
+
+        public List<SelectListItem> GetStages()
+        {
+            throw new NotImplementedException();
         }
     }
 

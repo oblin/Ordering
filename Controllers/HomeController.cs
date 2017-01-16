@@ -11,11 +11,11 @@ namespace Ordering.Controllers
     {
         public IActionResult Index()
         {
-            var orders = new List<Order>()
+            var orders = new List<OrderSummary>()
             {
-                new Order { Name = "Dones id elit non", LastUpdated = DateTime.Now.AddDays(-2), Description = "Test 1" },
-                new Order { Name = "Maecenas sed diam eget risus", LastUpdated = DateTime.Now.AddDays(-5), Description = "Test 2" },
-                new Order { Name = "Maecenas sed", LastUpdated = DateTime.Now.AddDays(-7), Description = "Test 3" }
+                new OrderSummary { Name = "Dones id elit non", LastUpdated = DateTime.Now.AddDays(-2), Description = "Test 1" },
+                new OrderSummary { Name = "Maecenas sed diam eget risus", LastUpdated = DateTime.Now.AddDays(-5), Description = "Test 2" },
+                new OrderSummary { Name = "Maecenas sed", LastUpdated = DateTime.Now.AddDays(-7), Description = "Test 3" }
             };
 
             ViewBag.Orders = orders;
