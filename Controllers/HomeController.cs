@@ -43,9 +43,9 @@ namespace Ordering.Controllers
         }
 
         [HttpPost]
-        public IActionResult Vote(int id)
+        public IActionResult Vote(int Id)
         {
-            return ViewComponent("SurveyWidget", new { productId = id });
+            return ViewComponent("SurveyWidget", new { productId = Id });
         }
     }
 }

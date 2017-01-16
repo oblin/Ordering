@@ -1,6 +1,4 @@
-@model IEnumerable<Ordering.Components.SurveyProduct>
-    
-<div class="panel panel-primary widget">
+﻿<div class="panel panel-primary widget">
     <div class="panel-heading">
         <div class="row">
             <div class="col-xs-3">
@@ -20,7 +18,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach(var product in Model)
+                @foreach (var product in Model)
                 {
                     <tr>
                         <td>@product.Name</td>
