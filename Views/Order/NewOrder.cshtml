@@ -12,6 +12,7 @@
     </div>
     <form id="full-page-form" asp-action="NewOrder" asp-controller="Order" method="post">
         <div class="row">
+            <div asp-validation-summary="All"></div>
             <div class="col-md-6">
                 <div class="row form-group">
                     <label class="col-xs-12" asp-for="ClientId">Client Id</label>
@@ -19,8 +20,9 @@
                     <div class="col-xs-3"><button class="btn btn-default">Lookup</button></div>
                 </div>
                 <div class="form-group">
-                    <label>Company Name</label> 
+                    <label asp-for="CompanyName">Company Name</label> 
                     <input asp-for="CompanyName" type="text" class="form-control" />
+                    <span asp-validation-for="CompanyName"></span>
                 </div>
                 <div class="form-group">
                     <label>Order Date</label>
