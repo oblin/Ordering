@@ -11,6 +11,7 @@ namespace Ordering.Services
     {
         List<SelectListItem> GetLocations();
         List<SelectListItem> GetClientTypes();
+        List<SelectListItem> GetStages();
     }
 
     public class FormDataService : IFormDataService
@@ -36,17 +37,17 @@ namespace Ordering.Services
             };
         }
 
-        public List<OrderProductVM> GetStages()
+        public List<SelectListItem> GetStages()
         {
-            return new List<OrderProductVM>()
+            return new List<SelectListItem>()
             {
-                new OrderProductVM() { Id = 1, Name = "Intake" },
-                new OrderProductVM() { Id = 2, Name = "Inventory Fulfillment" },
-                new OrderProductVM() { Id = 3, Name = "Billing" },
-                new OrderProductVM() { Id = 4, Name = "Prep for Shipping" },
-                new OrderProductVM() { Id = 5, Name = "Shipped" },
-                new OrderProductVM() { Id = 6, Name = "Delivery Confirmation" },
-                new OrderProductVM() { Id = 7, Name = "On Hold" }
+                new SelectListItem() { Value = "1", Text = "Intake" },
+                new SelectListItem() { Value = "2", Text = "Inventory Fulfillment" },
+                new SelectListItem() { Value = "3", Text = "Billing" },
+                new SelectListItem() { Value = "4", Text = "Prep for Shipping" },
+                new SelectListItem() { Value = "5", Text = "Shipped" },
+                new SelectListItem() { Value = "6", Text = "Delivery Confirmation" },
+                new SelectListItem() { Value = "7", Text = "On Hold" }
             };
         }
     }
