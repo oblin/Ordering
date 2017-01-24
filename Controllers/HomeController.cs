@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Ordering.Models;
 
@@ -13,9 +11,10 @@ namespace Ordering.Controllers
         {
             var orders = new List<OrderSummary>()
             {
-                new OrderSummary { Name = "Dones id elit non", LastUpdated = DateTime.Now.AddDays(-2), Description = "Test 1" },
-                new OrderSummary { Name = "Maecenas sed diam eget risus", LastUpdated = DateTime.Now.AddDays(-5), Description = "Test 2" },
-                new OrderSummary { Name = "Maecenas sed", LastUpdated = DateTime.Now.AddDays(-7), Description = "Test 3" }
+                new OrderSummary { Stage = "Intake", Name = "Dones id elit non", LastUpdated = DateTime.Now.AddDays(-2), Description = "Test 1" },
+                new OrderSummary { Stage = "Billing", Name = "Maecenas sed diam eget risus", LastUpdated = DateTime.Now.AddDays(-5), Description = "Test 2" },
+                new OrderSummary { Stage = "Shipped", Name = "Maecenas sed", LastUpdated = DateTime.Now.AddDays(-7), Description = "Test 3" },
+                new OrderSummary { Name = "Maecenas sed diam eget risus", LastUpdated = DateTime.Now.AddDays(-7), Description = "Test 4" }
             };
 
             ViewBag.Orders = orders;

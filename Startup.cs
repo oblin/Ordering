@@ -6,9 +6,11 @@ using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Ordering.Infrastructure;
 using Ordering.Services;
 
 namespace Ordering
@@ -32,6 +34,10 @@ namespace Ordering
         {
             // MVC setup
             services.AddMvc();
+            services.Configure<RazorViewEngineOptions>(options => {
+                options.ViewLocationExpanders.Clear();
+                options.ViewLocationExpanders.Add(new ThemeExpander());
+            });
 
             // Autofac setup
             var builder = new ContainerBuilder();

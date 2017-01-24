@@ -43,5 +43,6 @@ namespace Ordering.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public DateTime LastUpdated { get; set; }
+        public string Stage { get; set; }
     }
 }
