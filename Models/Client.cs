@@ -9,7 +9,7 @@ namespace Ordering.Models
     {
         // [Required]
         public string FirstName { get; set; }
-        // [Required]
+        [Required, DisplayAttribute(Name = "Last Name")]
         public string LastName { get; set; }
         // [Required]
         public string CompanyName { get; set; }
@@ -18,11 +18,13 @@ namespace Ordering.Models
         public string Email { get; set; }
         // [Required]
         public string Phone { get; set; }
+        [DataTypeAttribute(DataType.Date)]
         public DateTime? ContactDate { get; set; }
         // [Required]
         public string ClientType { get; set; }
         public string NearestLocation { get; set; }
-        [MaxLengthAttribute(25)]
+        [MaxLengthAttribute(25), DataTypeAttribute(DataType.MultilineText)]
+        [UIHintAttribute("MultilineTextLarge")]
         public string Notes { get; set; }
 
         public List<EmailPromo> EmailPromos { get; set; }
